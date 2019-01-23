@@ -1,3 +1,4 @@
+<!--HTML nuevo alumno-->
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
@@ -8,6 +9,7 @@
           </div>
           <div class="card-body">
             <form>
+              <!--Display datos a ingresar-->
               <div class="row">
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
@@ -50,12 +52,18 @@
                 </div>
               </div>
               <div class="row">
+                <!--Boton para subir archivos excel de carga "masiva"-->
                 <div class="col-md-8"> Cargar por xlsx:
                   <button mat-raised-button class="btn btn-info" type="file">Archivo </button>
                 </div>
               </div>
               <a [routerLink]="['/curso/curso-detail']">
+                <!--Boton para guardar-->
                 <button mat-raised-button type="submit" class="btn btn-info pull-right">Guardar</button>
+              </a>
+              <a [routerLink]="['/curso/curso-detail']">
+                <!--Boton para cancelar-->
+                <button mat-raised-button type="submit" class="btn btn-info pull-right">Cancelar</button>
               </a>
               <div class="clearfix"></div>
             </form>
@@ -63,6 +71,7 @@
         </div>
       </div>
       <div class="col-md-4">
+        <!--Carta/tarjeta de perfil-->
         <div class="card card-profile">
           <div class="card-avatar">
             <img class="img" src="./assets/img/generic-user-purple.png" />

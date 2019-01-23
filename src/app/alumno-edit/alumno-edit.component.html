@@ -1,13 +1,15 @@
+<!--HTML para editar alumno-->
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-info">
-            <h4 class="card-title">Nuevo Alumno</h4>
+            <h4 class="card-title">Editar Alumno</h4>
           </div>
           <div class="card-body">
             <form>
+              <!--Display de datos actuales del alumno-->
               <div class="row">
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
@@ -50,6 +52,7 @@
                 </div>
               </div>
               <a [routerLink]="['/curso/curso-detail']">
+                <!--Boton para guardar datos modificados-->
                 <button mat-raised-button type="submit" class="btn btn-info pull-right">Guardar</button>
               </a>
               <div class="clearfix"></div>
@@ -59,6 +62,7 @@
       </div>
       <div class="col-md-4">
         <div class="card card-profile">
+          <!--Carta/tarjeta de perfil-->
           <div class="card-avatar">
             <img class="img" src="./assets/img/generic-user-purple.png" />
           </div>

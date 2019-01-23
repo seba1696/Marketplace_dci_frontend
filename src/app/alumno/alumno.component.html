@@ -1,3 +1,4 @@
+<!--HTML para listar alumnos del sistema-->
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
@@ -8,6 +9,7 @@
               <h4 class="card-title">Alumnos</h4>
             </div>
             <div class="col-md-1">
+              <!--Boton agregar nuevo(s) alumno(s)-->
               <a [routerLink]="['alumno-new']">
                 <button type="button" class="btn btn-circle btn-white">➕</button>
               </a>
@@ -17,6 +19,7 @@
         <div class="card-body">
           <form class="navbar-form ml-auto">
             <div class="input-group no-border">
+              <!--Buscador de alumnos-->
               <input type="text" value="" class="form-control" placeholder="Buscar...">
               <button mat-raised-button type="submit" class="btn btn-info btn-round btn-just-icon">
                 <i class="material-icons">search</i>
@@ -27,6 +30,7 @@
           <div class="table-responsive">
             <table class="table">
               <thead class=" text-info">
+                <!--Elementos basicos a mostrar, definidos previamente-->
                 <th> Run </th>
                 <th> Nombre </th>
                 <th> Email </th>
@@ -45,6 +49,7 @@
                   <td>65456</td>
                   <td>
                     <a [routerLink]="['alumno-edit']">
+                      <!--Boton para modifcar alumno-->
                       <button class="btn btn-link btn-xs">
                         <img src="https://img.icons8.com/color/24/000000/settings.png">
                       </button>
