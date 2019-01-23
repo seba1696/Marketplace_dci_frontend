@@ -1,7 +1,12 @@
 <div class="main-content">
     <div class="container-fluid">
-        <div class="navbar navbar-expand-sm navbar-light bg-light justify-content-center">
-            <h4>CURSOS</h4>
+        <div class="navbar navbar-expand-sm navbar-light bg-info">
+            <h4>&nbsp;&nbsp;&nbsp;Cursos</h4>
+            <div style="text-align: right;width:880px">
+                <a [routerLink]="['curso-new']">
+                    <button type="button" class="btn btn-circle btn-white">➕</button>
+                </a>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -11,7 +16,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Curso 1</a>
+                            <a [routerLink]="['curso-detail']">Curso 1</a>
                         </h4>
                         <p class="card-category">Cantidad de productos: n</p>
                         <p class="card-category">Profesor: Jaime Diaz</p>
@@ -28,7 +33,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Curso 2</a>
+                            <a [routerLink]="['curso-detail']">Curso 2</a>
                         </h4>
                         <p class="card-category">Cantidad de productos: n</p>
                         <p class="card-category">Profesor: Jaime Diaz</p>
@@ -45,7 +50,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Curso 3</a>
+                            <a [routerLink]="['curso-detail']">Curso 3</a>
                         </h4>
                         <p class="card-category">Cantidad de productos: n</p>
                         <p class="card-category">Profesor: Jaime Diaz</p>
@@ -62,7 +67,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Curso 4</a>
+                            <a [routerLink]="['curso-detail']">Curso 4</a>
                         </h4>
                         <p class="card-category">Cantidad de productos: n</p>
                         <p class="card-category">Profesor: Jaime Diaz</p>
@@ -79,7 +84,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Curso 5</a>
+                            <a [routerLink]="['curso-detail']">Curso 5</a>
                         </h4>
                         <p class="card-category">Cantidad de productos: n</p>
                         <p class="card-category">Profesor: Jaime Diaz</p>
@@ -96,7 +101,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Curso 6</a>
+                            <a [routerLink]="['curso-detail']">Curso 6</a>
                         </h4>
                         <p class="card-category">Cantidad de productos: n</p>
                         <p class="card-category">Profesor: Jaime Diaz</p>
@@ -113,7 +118,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Curso 7</a>
+                            <a [routerLink]="['curso-detail']">Curso 7</a>
                         </h4>
                         <p class="card-category">Cantidad de productos: n</p>
                         <p class="card-category">Profesor: Jaime Diaz</p>
@@ -130,7 +135,7 @@
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Curso 8</a>
+                            <a [routerLink]="['curso-detail']">Curso 8</a>
                         </h4>
                         <p class="card-category">Cantidad de productos: n</p>
                         <p class="card-category">Profesor: Jaime Diaz</p>
@@ -142,5 +147,4 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-info float-right">Nuevo Curso</button>
 </div>

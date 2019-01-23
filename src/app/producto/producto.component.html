@@ -1,58 +1,60 @@
-<div class="main-content">
-  <div class="container-fluid">
-    <div class="navbar navbar-expand-sm navbar-light bg-light justify-content-center">
-      <h4>PRODUCTOS</h4>
+<div class="container-fluid">
+  <div class="navbar navbar-expand-sm navbar-light bg-info ">
+    <h4>&nbsp;&nbsp;&nbsp;Productos</h4>
+    <div style="text-align: right;width:820px">
+      <a [routerLink]="['producto-new']">
+        <button type="button" class="btn btn-circle btn-white">➕</button>
+      </a>
     </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card card-chart">
-          <div class="card-header card-header-info">
-            <div class="ct-chart" id="producto1"></div>
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Producto 1</a>
-            </h4>
-            <p class="card-category">Descripción</p>
-          </div>
-          <div class="card-footer">
-            <p>Valor: n</p>
-          </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card card-chart">
+        <div class="card-header card-header-info">
+          <div class="ct-chart" id="producto1"></div>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a [routerLink]="['producto-edit']">Producto 1</a>
+          </h4>
+          <p class="card-category">Descripción</p>
+        </div>
+        <div class="card-footer">
+          <p>Valor: n</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card card-chart">
-          <div class="card-header card-header-info">
-            <div class="ct-chart" id="producto2"></div>
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Producto 2</a>
-            </h4>
-            <p class="card-category">Descripción</p>
-          </div>
-          <div class="card-footer">
-            <p>Valor: n</p>
-          </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-chart">
+        <div class="card-header card-header-info">
+          <div class="ct-chart" id="producto2"></div>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a [routerLink]="['producto-edit']">Producto 2</a>
+          </h4>
+          <p class="card-category">Descripción</p>
+        </div>
+        <div class="card-footer">
+          <p>Valor: n</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card card-chart">
-          <div class="card-header card-header-info">
-            <div class="ct-chart" id="producto3"></div>
-          </div>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Producto 3</a>
-            </h4>
-            <p class="card-category">Descripción</p>
-          </div>
-          <div class="card-footer">
-            <p>Valor: n</p>
-          </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-chart">
+        <div class="card-header card-header-info">
+          <div class="ct-chart" id="producto3"></div>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a [routerLink]="['producto-edit']">Producto 3</a>
+          </h4>
+          <p class="card-category">Descripción</p>
+        </div>
+        <div class="card-footer">
+          <p>Valor: n</p>
         </div>
       </div>
     </div>
   </div>
-  <button class="btn btn-info float-right">Nuevo Curso</button>
 </div>

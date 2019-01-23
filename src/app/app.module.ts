@@ -16,11 +16,20 @@ import { ProfesorComponent } from './profesor/profesor.component';
 import { CursoComponent } from './curso/curso.component';
 import { AlumnoComponent } from './alumno/alumno.component';
 import { ProductoComponent } from './producto/producto.component';
+import { ProfesorNewComponent } from './profesor-new/profesor-new.component';
+import { ProfesorEditComponent } from './profesor-edit/profesor-edit.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 import {
   AgmCoreModule
 } from '@agm/core';
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { CursoDetailComponent } from './curso-detail/curso-detail.component';
+import { ProductoNewComponent } from './producto-new/producto-new.component';
+import { CursoEditComponent } from './curso-edit/curso-edit.component';
+import { ProductoEditComponent } from './producto-edit/producto-edit.component';
+import { AlumnoNewComponent } from './alumno-new/alumno-new.component';
+import { AlumnoEditComponent } from './alumno-edit/alumno-edit.component';
+import { CursoNewComponent } from './curso-new/curso-new.component';
 
 @NgModule({
   imports: [

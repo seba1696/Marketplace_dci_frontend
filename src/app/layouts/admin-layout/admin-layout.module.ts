@@ -7,8 +7,17 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { ProfesorComponent } from '../../profesor/profesor.component';
 import { CursoComponent } from '../../curso/curso.component';
-import { AlumnoComponent } from 'app/alumno/alumno.component';
-import { ProductoComponent } from 'app/producto/producto.component';
+import { AlumnoComponent } from '../../alumno/alumno.component';
+import { ProductoComponent } from '../../producto/producto.component';
+import { ProfesorNewComponent } from '../../profesor-new/profesor-new.component';
+import { ProfesorEditComponent } from '../../profesor-edit/profesor-edit.component';
+import { CursoDetailComponent } from '../../curso-detail/curso-detail.component';
+import { ProductoNewComponent } from '../../producto-new/producto-new.component';
+import { CursoEditComponent } from '../../curso-edit/curso-edit.component';
+import { ProductoEditComponent } from '../../producto-edit/producto-edit.component';
+import { AlumnoNewComponent } from '../../alumno-new/alumno-new.component';
+import { AlumnoEditComponent } from '../../alumno-edit/alumno-edit.component';
+import { CursoNewComponent } from '../../curso-new/curso-new.component';
 
 import {
   MatButtonModule,
@@ -36,8 +45,17 @@ import {
     UserProfileComponent,
     ProfesorComponent,
     CursoComponent,
+    CursoNewComponent,
+    CursoDetailComponent,
+    CursoEditComponent,
     AlumnoComponent,
-    ProductoComponent
+    ProductoComponent,
+    ProfesorNewComponent,
+    ProfesorEditComponent,
+    ProductoNewComponent,
+    ProductoEditComponent,
+    AlumnoNewComponent,
+    AlumnoEditComponent,
   ]
 })
 
