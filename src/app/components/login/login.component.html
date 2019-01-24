@@ -1,24 +1,34 @@
-<div class="col-md-12">
-    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="col-md-5">
-        <p>
-            <label for="run">RUN</label>
-            <input type="text" name="run" #run="ngModel" [(ngModel)]="user.run" requiered class="form-control" />
-            <span *ngIf="!run.valid && run.touched">
-                Run no valido
-            </span>
-        </p>
-        <p>
-            <label for="pass">Constraseña</label>
-            <input type="password" name="pass" #pass="ngModel" [(ngModel)]="user.pass" requiered class="form-control" />
-            <span *ngIf="!pass.valid && pass.touched">
-                Constraseña invalida
-            </span>
-        </p>
-        <div class="col-2">
-            <a [routerLink]="['/ ']">
-                <!--Boton para guardar-->
-                <button mat-raised-button type="submit" class="btn btn-info btn-md" [disabled]="!loginForm.form.valid ">Ingresar</button>
-            </a>
-        </div>
-    </form>
+<div class="main-content">
+    <div class="row justify-content-center">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="col-md-4">
+            <div class="card card-profile">
+                <!--Carta/tarjeta de perfil-->
+                <div class="card-avatar">
+                    <img type="file" class="img" src="./assets/img/descarga.png" />
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Marketplace DCI</h4>
+                    <p class="card-description">--Descripción-- </p>
+                    <p>
+                        <label for="run">RUN</label>
+                        <input type="text" name="run" #run="ngModel" [(ngModel)]="user.run" requiered class="form-control" />
+                        <span *ngIf="!run.valid && run.touched">
+                            Run no valido
+                        </span>
+                    </p>
+                    <p>
+                        <label for="pass">Constraseña</label>
+                        <input type="password" name="pass" #pass="ngModel" [(ngModel)]="user.pass" requiered class="form-control" />
+                        <span *ngIf="!pass.valid && pass.touched">
+                            Constraseña invalida
+                        </span>
+                    </p>
+                    <a [routerLink]="['/dashboard']">
+                        <!--Boton para Ingresar-->
+                        <button mat-raised-button type="submit" class="btn btn-info btn-md" [disabled]="!loginForm.form.valid ">Ingresar</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

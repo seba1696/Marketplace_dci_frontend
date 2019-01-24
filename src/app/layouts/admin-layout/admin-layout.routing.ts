@@ -63,7 +63,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'user-profile', component: UserProfileComponent },
     { path: 'profesor', component: ProfesorListComponent },
-    { path: 'profesor/profesor-nuevo', component: ProfesorNewComponent },
+    { path: 'profesor/profesor-new', component: ProfesorNewComponent },
     { path: 'profesor/profesor-edit', component: ProfesorEditComponent },
     { path: 'curso', component: CursoListComponent },
     { path: 'curso/curso-new', component: CursoNewComponent },

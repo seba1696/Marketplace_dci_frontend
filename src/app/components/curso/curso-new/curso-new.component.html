@@ -13,17 +13,21 @@
               <div class="row">
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" type=text>
+                    <input matInput placeholder="Nombre" type=text name="nombre" #nombre="ngModel" [(ngModel)]="curso.nombre"
+                      required>
+                    <span *ngIf="!nombre.valid && nombre.touched"> Nombre invalido</span>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Codigo" type="text">
+                    <input matInput placeholder="Codigo" type="text" name="codigo" #codigo="ngModel" [(ngModel)]="curso.codigo"
+                      required>
+                    <span *ngIf="!codigo.valid && codigo.touched">Codigo invalido</span>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Profesor" type="text">
+                    <input matInput placeholder="Profesor" type="text" name="profesor">
                   </mat-form-field>
                 </div>
               </div>
@@ -35,20 +39,20 @@
                 </div>
               </div>
               <div class=row>
-                  <div class="col-9"> </div>
-                  <div class="col-1">
-                    <a [routerLink]="['/curso']">
-                      <!--Boton para cancelar-->
-                      <button mat-raised-button type="submit" class="btn btn-info btn-md pull-right">Cancelar</button>
-                    </a>
-                  </div>
-                  <div class="col-2">
-                    <a [routerLink]="['/curso']">
-                      <!--Boton para guardar-->
-                      <button mat-raised-button type="submit" class="btn btn-info btn-md pull-right">Guardar</button>
-                    </a>
-                  </div>
+                <div class="col-9"> </div>
+                <div class="col-1">
+                  <a [routerLink]="['/curso']">
+                    <!--Boton para cancelar-->
+                    <button mat-raised-button type="submit" class="btn btn-info btn-md pull-right">Cancelar</button>
+                  </a>
                 </div>
+                <div class="col-2">
+                  <a [routerLink]="['/curso']">
+                    <!--Boton para guardar-->
+                    <button mat-raised-button type="submit" class="btn btn-info btn-md pull-right">Guardar</button>
+                  </a>
+                </div>
+              </div>
               <div class="clearfix"></div>
             </form>
           </div>

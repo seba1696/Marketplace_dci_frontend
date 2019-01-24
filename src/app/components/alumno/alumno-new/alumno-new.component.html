@@ -13,48 +13,63 @@
               <div class="row">
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="RUN">
+                    <input matInput placeholder="RUN" type="text" name="run" #run="ngModel" [(ngModel)]="user.run"
+                      required>
+                    <span *ngIf="!run.valid && run.touched">
+                      Run invalido
+                    </span>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Contraseña" type="text">
+                    <input matInput placeholder="Contraseña" type="text" name="pass" #pass="ngModel" [(ngModel)]="user.pass"
+                      required>
+                    <span *ngIf="!pass.valid && pass.touched">Password invalida</span>
                   </mat-form-field>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" type="text">
+                    <input matInput placeholder="Nombre" type="text" name="nombre" #nombre="ngModel" [(ngModel)]="alumno.nombre"
+                      required>
+                    <span *ngIf="!nombre.valid && nombre.touched"> Nombre invalido</span>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Matricula" type="text">
+                    <input matInput placeholder="Matricula" type="text" name="matricula" #matricula="ngModel"
+                      [(ngModel)]="alumno.matricula" required>
+                    <span *ngIf="!matricula.valid && matricula.touched">Matricula invalida</span>
                   </mat-form-field>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Credito" type="number">
+                    <input matInput placeholder="Credito" type="number" name="credito" #credito="ngModel" [(ngModel)]="alumno.credito">
+                    <span *ngIf="!credito.valid && credito.touched">Campo credito invalido</span>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Código Carrera" type="text">
+                    <input matInput placeholder="Código Carrera" type="text" name="codigoCar" #codigoCar="ngModel"
+                      [(ngModel)]="alumno.codigoCarrera" required>
+                    <span *ngIf="!codigoCar.valid && codigoCar.touched">Codigo de carrera invalido</span>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Email" type="email">
+                    <input matInput placeholder="Email" type="email" name="email" #email="ngModel" [(ngModel)]="alumno.email"
+                      required>
+                    <span *ngIf="!email.valid && email.touched">Email invalido</span>
                   </mat-form-field>
                 </div>
               </div>
               <div class="row">
                 <!--Boton para subir archivos excel de carga "masiva"-->
                 <div class="col-md-8"> Cargar por xlsx:
-                  <input type="submit" value="Archivo" class="btn btn-info btn-sm"/>
+                  <input type="submit" value="Archivo" class="btn btn-info btn-sm" />
                 </div>
               </div>
               <div class=row>

@@ -8,29 +8,37 @@
             <h4 class="card-title">Nuevo Profesor</h4>
           </div>
           <div class="card-body">
-            <form>
+            <form #profesorNew="ngForm" (ngSubmit)="onSubmit(profesorNew)">
               <!--Listado de campos a ingresar-->
               <div class="row">
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="RUN">
+                    <input matInput placeholder="RUN" type="text" name="run" #run="ngModel" [(ngModel)]="user.run"
+                      required>
+                    <span *ngIf="!run.valid && run.touched">Run no valido</span>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Contraseña" type="text">
+                    <input matInput placeholder="Contraseña" type="text" name="pass" #pass="ngModel" [(ngModel)]="user.pass"
+                      required>
+                    <span *ngIf="!pass.valid && pass.touched"></span>
                   </mat-form-field>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" type="text">
+                    <input matInput placeholder="Nombre" type="text" name="nombre" #nombre="ngModel" [(ngModel)]="profesor.nombre"
+                      required>
+                    <span *ngIf="!nombre.valid && nombre.touched"></span>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Email" type="email">
+                    <input matInput placeholder="Email" type="email" name="email" #email="ngModel" [(ngModel)]="profesor.email"
+                      required>
+                    <span *ngIf="!email.valid && email.touched"></span>
                   </mat-form-field>
                 </div>
               </div>
