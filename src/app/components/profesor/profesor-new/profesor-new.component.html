@@ -44,7 +44,7 @@
               </div>
               <a [routerLink]="['/profesor']">
                 <!--Boton para guardar-->
-                <button mat-raised-button type="submit" class="btn btn-info pull-right">Guardar</button>
+                <button mat-raised-button type="submit" class="btn btn-info pull-right" [disabled]="!profesorNew.form.valid">Guardar</button>
               </a>
               <div class="clearfix"></div>
             </form>

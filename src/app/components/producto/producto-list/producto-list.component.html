@@ -11,51 +11,19 @@
   </div>
   <div class="row">
     <!--Listado de productos-->
-    <div class="col-md-4">
+    <div class="col-md-4" *ngFor="let producto of productos">
       <div class="card card-chart">
         <div class="card-header card-header-info">
-          <div class="ct-chart" id="producto1"></div>
+          <div class="ct-chart" id="producto"></div>
         </div>
         <div class="card-body">
           <h4 class="card-title">
-            <a [routerLink]="['producto-edit']">Producto 1</a>
+            <a [routerLink]="['producto-edit']">{{producto.nombre}}</a>
           </h4>
-          <p class="card-category">Descripción</p>
+          <p class="card-category">{{producto.desciption}}</p>
         </div>
         <div class="card-footer">
-          <p>Valor: n</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card card-chart">
-        <div class="card-header card-header-info">
-          <div class="ct-chart" id="producto2"></div>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a [routerLink]="['producto-edit']">Producto 2</a>
-          </h4>
-          <p class="card-category">Descripción</p>
-        </div>
-        <div class="card-footer">
-          <p>Valor: n</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card card-chart">
-        <div class="card-header card-header-info">
-          <div class="ct-chart" id="producto3"></div>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a [routerLink]="['producto-edit']">Producto 3</a>
-          </h4>
-          <p class="card-category">Descripción</p>
-        </div>
-        <div class="card-footer">
-          <p>Valor: n</p>
+          <p>{{producto.precio}}</p>
         </div>
       </div>
     </div>

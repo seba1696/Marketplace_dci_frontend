@@ -8,7 +8,7 @@
             <h4 class="card-title">Nuevo Alumno</h4>
           </div>
           <div class="card-body">
-            <form>
+            <form #alumnoNew="ngForm" (ngSubmit)="onSubmit(alumnoNew)">
               <!--Display datos a ingresar-->
               <div class="row">
                 <div class="col-md-5">
@@ -83,7 +83,7 @@
                 <div class="col-2">
                   <a [routerLink]="['/curso/curso-detail']">
                     <!--Boton para guardar-->
-                    <button mat-raised-button type="submit" class="btn btn-info btn-sm pull-right">Guardar</button>
+                    <button mat-raised-button type="submit" class="btn btn-info btn-sm pull-right" [disabled]="!alumnoNew.form.valid">Guardar</button>
                   </a>
                 </div>
               </div>
