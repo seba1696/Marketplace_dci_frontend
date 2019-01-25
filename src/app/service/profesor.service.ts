@@ -26,4 +26,8 @@ export class ProfesorService {
         let headers = new HttpHeaders().set('Content-type', 'application/x-form-urlencode');
         return this._http.get(this.url + 'ruta-api', { headers: headers });
     }
+
+    getCurso(id): Observable<any> {
+        return this._http.get(this.url + 'ruta-api/' + id);
+    }
 }

@@ -14,11 +14,13 @@
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
                     <input matInput placeholder="Nombre" disabled>
+                    <p>{{curso.nombre}}</p>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
                     <input matInput placeholder="Codigo" type="text" disabled>
+                    <p>{{curso.codigo}}</p>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
@@ -34,6 +36,10 @@
                   </mat-form-field>
                 </div>
               </div>
+              <a (click)="deleteCurso(curso.id)" [routerLink]="['curso']">
+                <!--Boton para editar curso-->
+                <button mat-raised-button type="submit" class="btn btn-info pull-right">Borrar</button>
+              </a>
               <a [routerLink]="['curso-edit']">
                 <!--Boton para editar curso-->
                 <button mat-raised-button type="submit" class="btn btn-info pull-right">Editar Curso</button>

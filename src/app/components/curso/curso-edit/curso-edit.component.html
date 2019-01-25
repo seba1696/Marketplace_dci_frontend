@@ -8,17 +8,17 @@
             <h4 class="card-title"> Editar Curso </h4>
           </div>
           <div class="card-body">
-            <form>
+            <form #cursoEdit="ngForm" (ngSubmit)="onSubmit(cursoEdit)">
               <!--Listado información actual a modificar-->
               <div class="row">
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" type=text>
+                    <input matInput placeholder="Nombre" type=text>{{curso.nombre}}
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Codigo" type="text">
+                    <input matInput placeholder="Codigo" type="text">{{curso.codigo}}
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
@@ -35,20 +35,20 @@
                 </div>
               </div>
               <div class=row>
-                  <div class="col-9"> </div>
-                  <div class="col-1">
-                    <a [routerLink]="['/curso/curso-detail']">
-                      <!--Boton para cancelar-->
-                      <button mat-raised-button type="submit" class="btn btn-info btn-md pull-right">Cancelar</button>
-                    </a>
-                  </div>
-                  <div class="col-2">
-                    <a [routerLink]="['/curso/curso-detail']">
-                      <!--Boton para guardar-->
-                      <button mat-raised-button type="submit" class="btn btn-info btn-md pull-right">Guardar</button>
-                    </a>
-                  </div>
+                <div class="col-9"> </div>
+                <div class="col-1">
+                  <a [routerLink]="['/curso/curso-detail']">
+                    <!--Boton para cancelar-->
+                    <button mat-raised-button type="submit" class="btn btn-info btn-md pull-right">Cancelar</button>
+                  </a>
                 </div>
+                <div class="col-2">
+                  <a [routerLink]="['/curso/curso-detail']">
+                    <!--Boton para guardar-->
+                    <button mat-raised-button type="submit" class="btn btn-info btn-md pull-right">Guardar</button>
+                  </a>
+                </div>
+              </div>
               <div class="clearfix"></div>
             </form>
           </div>

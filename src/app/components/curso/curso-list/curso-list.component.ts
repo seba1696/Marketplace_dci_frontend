@@ -11,10 +11,14 @@ import { Curso } from '../../../models/curso';
 export class CursoListComponent implements OnInit {
 
   public cursos: Array<Curso>;
+  public curso1;
 
   constructor(
     //private _cursoService: CursoService
-  ) { }
+  ) {
+    //this.token=this._userService.getToken();
+
+  }
 
   ngOnInit() {
     /*this._cursoService.getCursos().subscribe(
@@ -27,6 +31,8 @@ export class CursoListComponent implements OnInit {
         console.log(error);
       }
     );*/
+    this.curso1 = new Curso(1, 'Sistemas de Información', 'ICC475');
+    this.cursos = [this.curso1];
   }
 
 }

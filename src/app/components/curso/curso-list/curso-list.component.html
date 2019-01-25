@@ -1,36 +1,45 @@
 <div class="main-content">
     <div class="container-fluid">
-        <div class="navbar navbar-expand-sm navbar-light bg-info">
-            <h4>&nbsp;&nbsp;&nbsp;Cursos</h4>
-            <div style="text-align: right;width:880px">
-                <a [routerLink]="['curso-new']">
-                    <button type="button" class="btn btn-circle btn-white">➕</button>
-                </a>
+        <div class="alert alert-danger" *ngIf="!cursos">No se registran cursos</div>
+        <div *ngIf="cursos">
+            <div class="d-flex justify-content-center text-info" *ngIf="!cursos">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
             </div>
-        </div>
-        <div class="loading" *ngIf="!alumnos">
-            <img src="./assets/img/gears.gif">
-            Cargando...
-        </div>
-        <div class="row">
-            <!--Listado cursos registrados-->
-            <div class="col-md-4" *ngFor="let curso of cursos">
-                <div class="card card-chart">
-                    <div class="card-header card-header-info">
-                        <div class="ct-chart" id="curso1"></div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a [routerLink]="['curso-detail']">{{curso.nombre}}</a>
-                        </h4>
-                        <p class="card-category">Cantidad de productos: n</p>
-                        <p class="card-category">Profesor: Jaime Diaz</p>
-                    </div>
-                    <div class="card-footer">
-                        <p>Cantidad de alumnos: n</p>
+            <div class="navbar navbar-expand-sm navbar-light bg-info" *ngIf="cursos">
+                <h4>&nbsp;&nbsp;&nbsp;Cursos</h4>
+                <div style="text-align: right;width:880px">
+                    <a [routerLink]="['curso-new']">
+                        <button type="button" class="btn btn-circle btn-white">➕</button>
+                    </a>
+                </div>
+            </div>
+            <div class="row" *ngIf="cursos">
+                <!--Listado cursos registrados-->
+                <div class="col-md-4" *ngFor="let curso of cursos">
+                    <div class="card card-chart">
+                        <div class="card-header card-header-info">
+                            <div class="ct-chart" id="curso1"></div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a [routerLink]="['curso-detail']">{{curso.nombre}}</a>
+                            </h4>
+                            <p class="card-category">Cantidad de productos: n</p>
+                            <p class="card-category">Profesor: Jaime Diaz</p>
+                        </div>
+                        <div class="card-footer">
+                            <p>Cantidad de alumnos: n</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div style="text-align: right;width:470px">
+            <a [routerLink]="['curso-new']">
+                <button type="button" class="btn btn-circle btn-xl btn-info">➕</button>
+            </a>
         </div>
     </div>
 </div>
