@@ -11,6 +11,7 @@ import { Alumno } from '../../../models/alumno';
 export class AlumnoListComponent implements OnInit {
 
   public alumnos: Array<Alumno>;
+  public alumno: Alumno;
 
   constructor(
     //private _alumnoService: AlumnoService
@@ -27,6 +28,8 @@ export class AlumnoListComponent implements OnInit {
         console.log(error);
       }
     );*/
+    this.alumno = new Alumno(1, 'nombre1', '1111111111', 0, '1555', 'email@email.com', 3);
+    this.alumnos = [this.alumno];
   }
 
 }

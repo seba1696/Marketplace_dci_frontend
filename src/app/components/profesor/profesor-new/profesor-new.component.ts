@@ -17,22 +17,23 @@ export class ProfesorNewComponent implements OnInit {
   public user: User;
   public profesor: Profesor;
 
-  constructor(//private _route: ActivatedRoute,
-    //private _router: Router,
-    //private _userService: UserService
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _userService: UserService
   ) {
-    // this.identity = this._userService.getIdentity();
-    // this.token = this._userService.getToken();
+    this.identity = this._userService.getIdentity();
+    this.token = this._userService.getToken();
   }
 
   ngOnInit() {
-    /*if (this.identity == null) {
+    if (this.identity == null) {
       this._router.navigate(['login']);
     } else {
       //Crear objeto profesor
       this.user = new User(0, '', '', 2);
       this.profesor = new Profesor(0, '', '', this.user.idRol);
-    }*/
+    }
   }
 
   onSubmit(form) {

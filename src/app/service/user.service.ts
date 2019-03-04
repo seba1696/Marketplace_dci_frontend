@@ -11,6 +11,7 @@ export class UserService {
 
   private url: string;
   private port: string;
+  private token;
 
   constructor(private _http: HttpClient) {
     this.url = environment.urlApi;
@@ -18,13 +19,19 @@ export class UserService {
   }
 
   loginUsuario(user: User) {
-    return this._http.post(this.url + this.port + '', user);
+    return this._http.post(this.url + this.port + '/marketplace/Marketplace/public/usuario/login', user);
   }
   getIdentity() {
 
   }
 
   getToken() {
-
+    let token = JSON.parse(localStorage.getItem('token'));
+    if (token != "undefined") {
+      this.token = token;
+    } else {
+      this.token = null;
+    }
+    return this.token;
   }
 }

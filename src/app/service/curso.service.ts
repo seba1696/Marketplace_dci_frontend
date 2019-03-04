@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Curso } from '../models/curso';
+import { RequestOptions, Http, Response, Headers } from '@angular/http';
 
 
 @Injectable()
@@ -23,9 +24,14 @@ export class CursoService {
         return this._http.post(this.url + 'ruta-api', params, { headers: headers });
     }
 
-    getCursos(): Observable<any> {
-        let headers = new HttpHeaders().set('Content-type', 'application/x-form-urlencode');
-        return this._http.get(this.url + 'ruta-api', { headers: headers });
+    getCursos(token): Observable<any> {
+        /*let headers1 = new Headers({
+            'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTEsInJ1biI6IjAxMDEwMTAxIiwicGFzcyI6IjAzYWM2NzQyMTZmM2UxNWM3NjFlZTFhNWUyNTVmMDY3OTUzNjIzYzhiMzg4YjQ0NTllMTNmOTc4ZDdjODQ2ZjQiLCJyb2wiOjEsImlhdCI6MTU0ODQxOTYyNiwiZXhwIjoxNTQ5MDI0NDI2fQ.B9SgBr7Zumgc_asP3JAkd79vCwezxvzo9OaKhRxmgd0'
+        });
+        let options = new RequestOptions({ headers: headers1 });
+        return this._http.get('http://localhost:8000/marketplace/Marketplace/public/curso', options).map((res: Response) => res.json());*/
+        let headers = new HttpHeaders().set('Authorization', token);
+        return this._http.get('http://localhost:8000/marketplace/Marketplace/public/curso', { headers: headers });
     }
 
     getCurso(id): Observable<any> {

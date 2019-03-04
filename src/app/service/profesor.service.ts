@@ -12,7 +12,8 @@ export class ProfesorService {
     }
 
     pruebas() {
-        return "Hola mundo";     }
+        return "Hola mundo";
+    }
 
     create(token, profesor: Profesor): Observable<any> {
         let json = JSON.stringify(profesor);
@@ -22,12 +23,19 @@ export class ProfesorService {
         return this._http.post(this.url + 'ruta-api', params, { headers: headers });
     }
 
-    getProfesores(): Observable<any> {
-        let headers = new HttpHeaders().set('Content-type', 'application/x-form-urlencode');
-        return this._http.get(this.url + 'ruta-api', { headers: headers });
+    getProfesores(token): Observable<any> {
+        let headers = new HttpHeaders().set('Authorization', token);
+        return this._http.get('http://localhost/marketplace/Marketplace/public/profesor', { headers: headers });
     }
 
-    getCurso(id): Observable<any> {
-        return this._http.get(this.url + 'ruta-api/' + id);
+    getProfesor(token, id): Observable<any> {
+        let headers = new HttpHeaders().set('Authorization', token);
+        return this._http.get('http://localhost/marketplace/Marketplace/public/profesor/' + id, { headers: headers });
+    }
+
+    delete(token, id): Observable<any> {
+        let headers = new HttpHeaders().set('Content-Type', 'application/x-form-urlencode')
+            .set('Authorization', token);
+        return this._http.delete('http://localhost/marketplace/Marketplace/public/profesor/eliminar/' + id, { headers: headers });
     }
 }

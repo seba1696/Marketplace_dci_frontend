@@ -2,6 +2,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -26,12 +27,16 @@ import { LoginComponent } from './components/login/login.component';
 import {
   AgmCoreModule
 } from '@agm/core';
+import { CursoService } from './service/curso.service';
+import { UserService } from './service/user.service';
+import { ProfesorService } from './service/profesor.service';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
@@ -43,7 +48,7 @@ import {
     AppComponent,
     AdminLayoutComponent,
   ],
-  providers: [],
+  providers: [CursoService, UserService, ProfesorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

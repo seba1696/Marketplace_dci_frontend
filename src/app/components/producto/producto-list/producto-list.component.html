@@ -1,31 +1,46 @@
 <!--HTML productos-->
 <div class="container-fluid">
-  <div class="navbar navbar-expand-sm navbar-light bg-info ">
-    <h4>&nbsp;&nbsp;&nbsp;Productos</h4>
-    <div style="text-align: right;width:820px">
-      <a [routerLink]="['producto-new']">
-        <!--Boton para agregar nuevo productos-->
-        <button type="button" class="btn btn-circle btn-white">➕</button>
-      </a>
+  <div class="alert alert-danger" *ngIf="!productos">No se registran productos</div>
+  <div *ngIf="productos">
+    <div class="d-flex justify-content-center text-info" *ngIf="!productos">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <!--Listado de productos-->
-    <div class="col-md-4" *ngFor="let producto of productos">
-      <div class="card card-chart">
-        <div class="card-header card-header-info">
-          <div class="ct-chart" id="producto"></div>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title">
-            <a [routerLink]="['producto-edit']">{{producto.nombre}}</a>
-          </h4>
-          <p class="card-category">{{producto.desciption}}</p>
-        </div>
-        <div class="card-footer">
-          <p>{{producto.precio}}</p>
+    <div class="navbar navbar-expand-sm navbar-light bg-info ">
+      <h4>&nbsp;&nbsp;&nbsp;Productos</h4>
+      <div style="text-align: right;width:820px">
+        <a [routerLink]="['producto-new']">
+          <!--Boton para agregar nuevo productos-->
+          <button type="button" class="btn btn-circle btn-white">➕</button>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <!--Listado de productos-->
+      <div class="col-md-4" *ngFor="let producto of productos">
+        <div class="card card-chart">
+          <div class="card-header card-header-info">
+            <div class="ct-chart" id="producto"></div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a [routerLink]="['producto-edit']">{{producto.nombre}}</a>
+            </h4>
+            <p class="card-category">{{producto.desciption}}</p>
+          </div>
+          <div class="card-footer">
+            <p>{{producto.precio}}</p>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div *ngIf="!productos">
+    <div style="text-align: right;width:470px">
+      <a [routerLink]="['producto-new']">
+        <button type="button" class="btn btn-circle btn-xl btn-info">➕</button>
+      </a>
     </div>
   </div>
 </div>

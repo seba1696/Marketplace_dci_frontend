@@ -27,7 +27,7 @@ export class CursoEditComponent implements OnInit {
     /*this._route.params.subscribe(params => {
      let id = +params['id'];
         this.getCurso(id)
-    });*/
+    });*/ 
     this.curso = new Curso(1, 'Sistemas de Información', 'ICC475');
   }
 

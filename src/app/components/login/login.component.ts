@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../service/user.service';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,22 +13,32 @@ import { UserService } from '../../service/user.service';
 export class LoginComponent implements OnInit {
 
   public user: User;
+  loginForm: FormGroup;
 
   constructor(
-    /*private _userService: UserService,
+    private _userService: UserService,
     private _route: ActivatedRoute,
-    private _router: Router*/
+    private _router: Router,
+    private _formBuilder: FormBuilder
   ) {
-    //this.user = new User(0, '', '', 0);
+    //this.user = new User(0,'','',0);
+    console.log(this.user);
   }
 
   ngOnInit() {
-    console.log('kkk');
+    this.loginForm = this._formBuilder.group({
+      run: ['', [Validators.required]],
+      pass: ['', [Validators.required]]
+    })
   }
 
-  onSubmit(form) {
-    /*console.log(this.user);
-    this._userService.loginUsuario(this.user).subscribe(
+  onSubmit() {
+    console.log(this.user);
+    let usuario: any = {};
+    usuario.run = this.loginForm.get('run').value;
+    usuario.pass = this.loginForm.get('pass').value;
+    console.log(usuario);
+    this._userService.loginUsuario(usuario).subscribe(
       response => {
         //Token
         console.log(response);
@@ -34,7 +46,7 @@ export class LoginComponent implements OnInit {
       error => {
         console.log(<any>error);
       }
-    );*/
+    );
   }
 
 }

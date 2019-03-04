@@ -11,6 +11,7 @@ import { Producto } from '../../../models/producto';
 export class ProductoListComponent implements OnInit {
 
   public productos: Array<Producto>;
+  public producto: Producto;
 
   constructor(
     //private _productoService: ProductoService
@@ -27,6 +28,8 @@ export class ProductoListComponent implements OnInit {
         console.log(error);
       }
     );*/
+    this.producto = new Producto(1, 'producto1', 'categoria1', 100, 'descripcion1');
+    this.productos = [this.producto];
   }
 
 }
