@@ -13,12 +13,12 @@
               <div class="row">
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="RUN">
+                    <input matInput placeholder="RUN">{{usuario.run}}
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Contraseña" type="text">
+                    <input matInput placeholder="Contraseña" type="text">{{usuario.pass}}
                   </mat-form-field>
                 </div>
               </div>
@@ -45,7 +45,7 @@
                 <div class="col-2">
                   <a [routerLink]="['/profesor']">
                     <!--Boton para guardar-->
-                    <button mat-raised-button type="submit" class="btn btn-info btn-sm pull-right">Guardar</button>
+                    <button mat-raised-button type="submit" class="btn btn-info btn-sm pull-right" (click)="onSubmit()">Guardar</button>
                   </a>
                 </div>
               </div>

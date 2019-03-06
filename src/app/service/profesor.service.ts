@@ -1,41 +1,43 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Profesor } from '../models/profesor';
-
+import { RequestOptions, Headers, Http, Response } from '@angular/http';
 
 @Injectable()
 export class ProfesorService {
-    public url: string;
-    constructor(public _http: HttpClient) {
 
+    private base: string;
+
+    constructor(private http: Http) {
+        this.base = 'http://localhost:8000/';
     }
 
-    pruebas() {
-        return "Hola mundo";
-    }
-
-    create(token, profesor: Profesor): Observable<any> {
-        let json = JSON.stringify(profesor);
-        let params = "json" + json;
-        let headers = new HttpHeaders().set('Content-type', 'application/x-form-urlencode')
-            .set('Authorization', token);
-        return this._http.post(this.url + 'ruta-api', params, { headers: headers });
+    create(token, profesor: any): Observable<any> {
+        let headers = new Headers({ 'Authorization': token, 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post(this.base + 'profesor/registro', JSON.stringify(profesor), options);
     }
 
     getProfesores(token): Observable<any> {
-        let headers = new HttpHeaders().set('Authorization', token);
-        return this._http.get('http://localhost/marketplace/Marketplace/public/profesor', { headers: headers });
+        let headers = new Headers({ 'Authorization': token});
+        let options = new RequestOptions({ headers: headers });
+        return this.http.get(this.base + 'profesor', options);
     }
 
     getProfesor(token, id): Observable<any> {
-        let headers = new HttpHeaders().set('Authorization', token);
-        return this._http.get('http://localhost/marketplace/Marketplace/public/profesor/' + id, { headers: headers });
+        let headers = new Headers({ 'Authorization': token, 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post(this.base + 'profesor/obtener/' + id, options);
     }
 
     delete(token, id): Observable<any> {
-        let headers = new HttpHeaders().set('Content-Type', 'application/x-form-urlencode')
-            .set('Authorization', token);
-        return this._http.delete('http://localhost/marketplace/Marketplace/public/profesor/eliminar/' + id, { headers: headers });
+        let headers = new Headers({ 'Authorization': token, 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.delete(this.base + 'profesor/eliminar/' + id, options);
+    }
+
+    update(token, profesor: any): Observable<any> {
+        let headers = new Headers({ 'Authorization': token, 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.put(this.base + 'profesor/update', JSON.stringify(profesor), options);
     }
 }

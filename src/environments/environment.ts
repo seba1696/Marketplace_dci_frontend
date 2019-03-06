@@ -5,8 +5,8 @@
 
 export const environment = {
   production: false,
-  urlApi: "localhost",
-  portApi: ":8080",
+  urlApi: "http://localhost",
+  portApi: ":8000",
   envName: "Desarrollo",
   animal: '🐔'
 };

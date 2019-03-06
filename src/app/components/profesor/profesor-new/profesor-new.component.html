@@ -8,61 +8,38 @@
             <h4 class="card-title">Nuevo Profesor</h4>
           </div>
           <div class="card-body">
-            <form #profesorNew="ngForm" (ngSubmit)="onSubmit(profesorNew)">
+            <form name="profesorForm" [formGroup]="profesorForm">
               <!--Listado de campos a ingresar-->
               <div class="row">
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="RUN" type="text" name="run" #run="ngModel" [(ngModel)]="user.run"
-                      required>
-                    <span *ngIf="!run.valid && run.touched">Run no valido</span>
+                    <input matInput placeholder="Run" formControlName="run">
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Contraseña" type="text" name="pass" #pass="ngModel" [(ngModel)]="user.pass"
-                      required>
-                    <span *ngIf="!pass.valid && pass.touched"></span>
+                    <input matInput placeholder="Pass" formControlName="pass">
                   </mat-form-field>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-5">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" type="text" name="nombre" #nombre="ngModel" [(ngModel)]="profesor.nombre"
-                      required>
-                    <span *ngIf="!nombre.valid && nombre.touched"></span>
+                    <input matInput placeholder="Nombre" formControlName="nombre">
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Email" type="email" name="email" #email="ngModel" [(ngModel)]="profesor.email"
-                      required>
-                    <span *ngIf="!email.valid && email.touched"></span>
+                    <input matInput placeholder="Email" formControlName="email">
                   </mat-form-field>
                 </div>
               </div>
               <a [routerLink]="['/profesor']">
                 <!--Boton para guardar-->
-                <button mat-raised-button type="submit" class="btn btn-info pull-right" [disabled]="!profesorNew.form.valid">Guardar</button>
+                <button mat-raised-button class="btn btn-info pull-right" (click)="onSubmit()">Guardar</button>
               </a>
               <div class="clearfix"></div>
             </form>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card card-profile">
-          <!--Carta/tarjeta de perfil-->
-          <div class="card-avatar">
-            <img class="img" src="./assets/img/generic-user-purple.png" />
-          </div>
-          <div class="card-body">
-            <h6 class="card-category text-gray">Profesor</h6>
-            <h4 class="card-title">Nombre</h4>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Descripción" type="text">
-            </mat-form-field>
           </div>
         </div>
       </div>

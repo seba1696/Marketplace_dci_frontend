@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
 
   public user: User;
   loginForm: FormGroup;
+  public token;
+  public identity;
 
   constructor(
     private _userService: UserService,
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
     private _router: Router,
     private _formBuilder: FormBuilder
   ) {
-    //this.user = new User(0,'','',0);
+    this.user = new User(0, '', '', 0);
     console.log(this.user);
   }
 
@@ -33,7 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.user);
     let usuario: any = {};
     usuario.run = this.loginForm.get('run').value;
     usuario.pass = this.loginForm.get('pass').value;
@@ -41,7 +42,18 @@ export class LoginComponent implements OnInit {
     this._userService.loginUsuario(usuario).subscribe(
       response => {
         //Token
-        console.log(response);
+        this.token = response._body;
+        console.log(this.token);
+        localStorage.setItem('token', this.token);
+        this._userService.loginUsuario(usuario, true).subscribe(
+          response => {
+            this.identity = response;
+            localStorage.setItem('identity', JSON.stringify(this.identity));
+          },
+          error => {
+            console.log(<any>error);
+          }
+        );
       },
       error => {
         console.log(<any>error);
