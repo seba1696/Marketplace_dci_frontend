@@ -13,8 +13,7 @@ import { User } from 'app/models/user';
 })
 export class ProfesorListComponent implements OnInit {
 
-  public profesores: Array<Profesor>;
-  public usuarios: Array<User>;
+  public profesores: Array<any>;
   public token;
   public body;
 
@@ -26,7 +25,6 @@ export class ProfesorListComponent implements OnInit {
   ) {
     this.token = this._userService.getToken();
     this.profesores = [];
-    this.usuarios = [];
   }
 
   ngOnInit() {
@@ -35,9 +33,6 @@ export class ProfesorListComponent implements OnInit {
         if (response.statusText == 'OK') {
           this.body = JSON.parse(response._body);
           this.profesores = this.body.profesores;
-          for (let index = 0; index < this.profesores.length; index++) {
-            this.usuarios = this.profesores[index]['usuario'];
-          }
         }
       },
       error => {
@@ -59,9 +54,9 @@ export class ProfesorListComponent implements OnInit {
     );
   }
 
-  editProfesor(id){
+  editProfesor(id) {
     console.log(id);
-    localStorage.setItem('id',id);
+    localStorage.setItem('id', id);
   }
 
 }

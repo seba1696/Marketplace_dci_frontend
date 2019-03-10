@@ -32,7 +32,7 @@
                                     <tbody>
                                         <tr *ngFor="let profesor of profesores">
                                             <!--<td>{{usuario.run}}</td>-->
-                                            <td> </td>
+                                            <td>{{profesor.usuario.run}} </td>
                                             <td> {{profesor.nombre}} </td>
                                             <td> {{profesor.email}} </td>
                                             <td>
@@ -42,7 +42,8 @@
                                                         <img src="https://img.icons8.com/color/24/000000/settings.png">
                                                     </button>
                                                 </a>
-                                                <a (click)="deleteProfesor(profesor.id)" [routerLink]="['/profesor']">
+                                                <a (click)="deleteProfesor(profesor.usuario.run)"
+                                                    [routerLink]="['/profesor']">
                                                     <button class="btn btn-danger btn-sm">X</button>
                                                 </a>
                                             </td>

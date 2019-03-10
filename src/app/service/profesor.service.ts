@@ -30,10 +30,10 @@ export class ProfesorService {
         return this.http.get(this.base + 'profesor/' + id, options);
     }
 
-    delete(token, id): Observable<any> {
+    delete(token, run: any): Observable<any> {
         let headers = new Headers({ 'Authorization': token, 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        return this.http.delete(this.base + 'profesor/eliminar/' + id, options);
+        return this.http.put(this.base + 'profesor/eliminar', JSON.stringify(run), options);
     }
 
     update(token, profesor: any): Observable<any> {
