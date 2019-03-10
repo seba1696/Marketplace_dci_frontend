@@ -1,24 +1,29 @@
 <div class="main-content">
-    <div class="row justify-content-center">
-        <form name="loginForm" [formGroup]="loginForm" class="col-md-4">
-            <div class="card card-profile">
-                <!--Carta/tarjeta de perfil-->
-                <div class="card-avatar">
-                    <img type="file" class="img" src="./assets/img/descarga.png" />
+    <div *ngIf="token==null">
+        <div class="row justify-content-center">
+            <form name="loginForm" [formGroup]="loginForm" class="col-md-4">
+                <div class="card card-profile">
+                    <!--Carta/tarjeta de perfil-->
+                    <div class="card-avatar">
+                        <img type="file" class="img" src="./assets/img/descarga.png" />
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Marketplace DCI</h4>
+                        <p class="card-description">--Descripción-- </p>
+                        <mat-form-field>
+                            <input matInput placeholder="run" formControlName="run" />
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="pass" formControlName="pass" />
+                        </mat-form-field>
+                        <!--Boton para Ingresar-->
+                        <button mat-raised-button class="btn btn-info btn-md" (click)="onSubmit()">Ingresar</button>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h4 class="card-title">Marketplace DCI</h4>
-                    <p class="card-description">--Descripción-- </p>
-                    <mat-form-field>
-                        <input matInput placeholder="run" formControlName="run" />
-                    </mat-form-field>
-                    <mat-form-field>
-                        <input matInput placeholder="pass" formControlName="pass" />
-                    </mat-form-field>
-                    <!--Boton para Ingresar-->
-                    <button mat-raised-button class="btn btn-info btn-md" (click)="onSubmit()">Ingresar</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
+    </div>
+    <div *ngIf="token!=null">
+        <p [routerLink]="['/user-profile']"></p>
     </div>
 </div>

@@ -8,33 +8,17 @@
             <h4 class="card-title"> Nuevo Curso </h4>
           </div>
           <div class="card-body">
-            <form #cursoNew="ngForm" (ngSubmit)="onSubmit(cursoNew)">
+            <form name="cursoForm" [formGroup]="cursoForm">
               <!--Listado de campos a ingresar-->
-              <div class="row">
+              <div class=" row">
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" type=text name="nombre" #nombre="ngModel" [(ngModel)]="curso.nombre"
-                      required>
-                    <span *ngIf="!nombre.valid && nombre.touched"> Nombre invalido</span>
+                    <input matInput placeholder="Nombre" formControlName="nombre">
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Codigo" type="text" name="codigo" #codigo="ngModel" [(ngModel)]="curso.codigo"
-                      required>
-                    <span *ngIf="!codigo.valid && codigo.touched">Codigo invalido</span>
-                  </mat-form-field>
-                </div>
-                <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Profesor" type="text" name="profesor">
-                  </mat-form-field>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Descripción" type="textarea">
+                    <input matInput placeholder="Codigo" formControlName="codigo">
                   </mat-form-field>
                 </div>
               </div>
@@ -49,7 +33,8 @@
                 <div class="col-2">
                   <a [routerLink]="['/curso']">
                     <!--Boton para guardar-->
-                    <button mat-raised-button type="submit" class="btn btn-info btn-md pull-right" [disabled]="!cursoNew.form.valid">Guardar</button>
+                    <button mat-raised-button class="btn btn-info btn-md pull-right"
+                      (click)="onSubmit()">Guardar</button>
                   </a>
                 </div>
               </div>

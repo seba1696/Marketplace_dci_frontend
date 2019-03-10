@@ -7,33 +7,36 @@ import { UserService } from '../../../service/user.service';
   selector: 'app-curso-list',
   templateUrl: './curso-list.component.html',
   styleUrls: ['./curso-list.component.scss']
-  , providers: [CursoService]
+  , providers: [UserService, CursoService]
 })
 export class CursoListComponent implements OnInit {
 
-  public cursos: Array<Curso>;
-  public curso1;
+  public cursos: Array<any>;
   public token;
+  public body;
+
   constructor(
     private _cursoService: CursoService, private _userService: UserService
   ) {
     this.token = this._userService.getToken();
-
+    this.cursos = [];
   }
 
   ngOnInit() {
     this._cursoService.getCursos(this.token).subscribe(
       response => {
-        if (response.status == 'success') {
-          this.cursos = response.cursos;
+        console.log(response);
+        if (response.statusText == 'OK') {
+          this.body = JSON.parse(response._body);
+          this.cursos = this.body.curso;
+          console.log(this.cursos);
         }
       },
       error => {
         console.log(error);
       }
     );
-    this.curso1 = new Curso(1, 'Sistemas de Información', 'ICC475');
-    this.cursos = [this.curso1];
+
   }
 
 }

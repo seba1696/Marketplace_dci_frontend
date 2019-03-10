@@ -41,9 +41,8 @@ export class ProfesorListComponent implements OnInit {
     );
   }
 
-  deleteProfesor(id) {
-    console.log(id);
-    this._profesorService.delete(this.token, id).subscribe(
+  deleteProfesor(run) {
+    this._profesorService.delete(this.token, run).subscribe(
       response => {
         console.log(response);
         this._router.navigate['profesor'];
