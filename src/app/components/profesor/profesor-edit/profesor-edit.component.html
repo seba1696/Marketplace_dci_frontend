@@ -8,29 +8,29 @@
             <h4 class="card-title">Editar Profesor</h4>
           </div>
           <div class="card-body">
-            <form #profesorEdit="ngForm" (ngSubmit)="onSubmit(profesorEdit)">
+            <form name="profesorForm" [formGroup]="profesorForm">
               <!--Listado campos a modificar-->
               <div class="row">
                 <div class="col-md-5">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="RUN">{{usuario.run}}
+                  <mat-form-field>
+                    <input matInput placeholder="RUN" formControlName="run">{{usuario.run}}
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Contraseña" type="text">{{usuario.pass}}
+                  <mat-form-field>
+                    <input matInput placeholder="Contraseña" formControlName="pass">
                   </mat-form-field>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" type="text">{{profesor.nombre}}
+                  <mat-form-field>
+                    <input matInput placeholder="Nombre" formControlName="nombre">{{profesor.nombre}}
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Email" type="email">{{profesor.email}}
+                  <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email">{{profesor.email}}
                   </mat-form-field>
                 </div>
               </div>
@@ -39,7 +39,7 @@
                 <div class="col-1">
                   <a [routerLink]="['/profesor']">
                     <!--Boton para cancelar-->
-                    <button mat-raised-button type="submit" class="btn btn-info btn-sm pull-right">Cancelar</button>
+                    <button mat-raised-button type="submit" class="btn btn-info btn-sm pull-right" (click)="destroyId()">Cancelar</button>
                   </a>
                 </div>
                 <div class="col-2">

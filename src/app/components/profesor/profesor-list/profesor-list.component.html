@@ -31,11 +31,12 @@
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let profesor of profesores">
-                                            <td>EN MANTENIMIENTO</td>
+                                            <!--<td>{{usuario.run}}</td>-->
+                                            <td> </td>
                                             <td> {{profesor.nombre}} </td>
                                             <td> {{profesor.email}} </td>
                                             <td>
-                                                <a [routerLink]="['profesor-edit']">
+                                                <a [routerLink]="['profesor-edit']" (click)="editProfesor(profesor.id)">
                                                     <!--Botón para modificar datos de un profesor-->
                                                     <button class="btn btn-link btn-xs">
                                                         <img src="https://img.icons8.com/color/24/000000/settings.png">

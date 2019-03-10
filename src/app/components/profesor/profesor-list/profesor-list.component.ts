@@ -35,37 +35,13 @@ export class ProfesorListComponent implements OnInit {
         if (response.statusText == 'OK') {
           this.body = JSON.parse(response._body);
           this.profesores = this.body.profesores;
-          /*this._userService.getUsuarios(this.token).subscribe(
-            response => {
-              if (response.statusText == 'OK') {
-                this.body = JSON.parse(response._body);
-                this.usuarios = this.body.usuarios;
-                console.log(this.usuarios);
-              }
-            },
-            error => {
-              console.log(error);
-            }
-          );*/
+          for (let index = 0; index < this.profesores.length; index++) {
+            this.usuarios = this.profesores[index]['usuario'];
+          }
         }
       },
       error => {
         console.log(error);
-      }
-    );
-  }
-
-  getProfesor(id) {
-    this._profesorService.getProfesor(this.token, id).subscribe(
-      response => {
-        if (response.status == 'success') {
-          this.profesores = response.profesores;
-        } else {
-          this._router.navigate(['/profesor']);
-        }
-      },
-      error => {
-        console.log(<any>error);
       }
     );
   }
@@ -81,6 +57,11 @@ export class ProfesorListComponent implements OnInit {
         console.log(<any>error);
       }
     );
+  }
+
+  editProfesor(id){
+    console.log(id);
+    localStorage.setItem('id',id);
   }
 
 }

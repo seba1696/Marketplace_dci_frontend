@@ -33,7 +33,7 @@ export class UserService {
   getUsuario(token, id): Observable<any> {
     let headers = new Headers({ 'Authorization': token, 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post(this.base + '/usuario/' + id, options);
+    return this.http.get(this.base + '/usuario/' + id, options);
   }
 
   getUsuarios(token): Observable<any> {

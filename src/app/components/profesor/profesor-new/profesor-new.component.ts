@@ -40,8 +40,8 @@ export class ProfesorNewComponent implements OnInit {
       email: ['', [Validators.required]]
     })
     //Crear objeto profesor
-    this.user = new User(0, '', '', 2);
-    this.profesor = new Profesor(0, '', '', this.user.idRol);
+    /*this.user = new User(0, '', '', 2);
+    this.profesor = new Profesor(0, '', '', this.user.idRol);*/
   }
 
   onSubmit() {
