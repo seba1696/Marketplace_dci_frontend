@@ -1,6 +1,4 @@
 import { Routes } from '@angular/router';
-
-import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../components/user-profile/user-profile.component';
 import { ProfesorListComponent } from '../../components/profesor/profesor-list/profesor-list.component';
 import { ProfesorNewComponent } from '../../components/profesor/profesor-new/profesor-new.component';
@@ -18,49 +16,6 @@ import { AlumnoEditComponent } from '../../components/alumno/alumno-edit/alumno-
 import { LoginComponent } from '../../components/login/login.component';
 
 export const AdminLayoutRoutes: Routes = [
-    // {
-    //   path: '',
-    //   children: [ {
-    //     path: 'dashboard',
-    //     component: DashboardComponent
-    // }]}, {
-    // path: '',
-    // children: [ {
-    //   path: 'userprofile',
-    //   component: UserProfileComponent
-    // }]
-    // }, {
-    //   path: '',
-    //   children: [ {
-    //     path: 'icons',
-    //     component: IconsComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'notifications',
-    //         component: NotificationsComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'maps',
-    //         component: MapsComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'typography',
-    //         component: TypographyComponent
-    //     }]
-    // }, {
-    //     path: '',
-    //     children: [ {
-    //         path: 'upgrade',
-    //         component: UpgradeComponent
-    //     }]
-    // }
-    { path: 'dashboard', component: DashboardComponent },
     { path: 'user-profile', component: UserProfileComponent },
     { path: 'profesor', component: ProfesorListComponent },
     { path: 'profesor/profesor-new', component: ProfesorNewComponent },

@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AlumnoListComponent } from './components/alumno/alumno-list/alumno-list.component';
 import { AlumnoNewComponent } from './components/alumno/alumno-new/alumno-new.component';

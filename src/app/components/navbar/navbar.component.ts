@@ -2,11 +2,13 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
+import { UserService } from 'app/service/user.service';
 
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.css']
+    styleUrls: ['./navbar.component.css'],
+    providers: [UserService]
 })
 export class NavbarComponent implements OnInit {
     private listTitles: any[];
@@ -14,10 +16,15 @@ export class NavbarComponent implements OnInit {
     mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
+    public token;
 
-    constructor(location: Location, private element: ElementRef, private router: Router) {
+    constructor(location: Location,
+        private element: ElementRef,
+        private router: Router,
+        private _userService: UserService) {
         this.location = location;
         this.sidebarVisible = false;
+        this.token = this._userService.getToken();
     }
 
     ngOnInit() {

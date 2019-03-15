@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
     private _formBuilder: FormBuilder
   ) {
     this.user = new User(0, '', '', 0);
+    this.token = this._userService.getToken();
   }
 
   ngOnInit() {

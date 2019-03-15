@@ -84,6 +84,7 @@ export class ProfesorEditComponent implements OnInit {
   onSubmit() {
     this.destroyId();
     let profesor: any = {};
+    profesor.profesor = this.usuario.run;
     profesor.run = this.profesorForm.get('run').value;
     profesor.pass = this.profesorForm.get('pass').value;
     profesor.nombre = this.profesorForm.get('nombre').value;

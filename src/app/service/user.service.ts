@@ -51,8 +51,8 @@ export class UserService {
 
   getToken() {
     let token = localStorage.getItem('token');
-    let tokenClear = token.slice(1, token.length);
-    if (token != "undefined") {
+    if (token != null) {
+      let tokenClear = token.slice(1, token.length);
       this.token = tokenClear;
     } else {
       this.token = null;

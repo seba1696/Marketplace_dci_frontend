@@ -3,7 +3,6 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../components/user-profile/user-profile.component';
 import { ProfesorListComponent } from '../../components/profesor/profesor-list/profesor-list.component';
 import { ProfesorNewComponent } from '../../components/profesor/profesor-new/profesor-new.component';
@@ -43,7 +42,6 @@ import {
     MatTooltipModule,
   ],
   declarations: [
-    DashboardComponent,
     UserProfileComponent,
     CursoListComponent,
     CursoNewComponent,
