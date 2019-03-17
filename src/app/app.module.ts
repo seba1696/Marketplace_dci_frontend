@@ -23,6 +23,7 @@ import { ProductoNewComponent } from './components/producto/producto-new/product
 import { ProductoEditComponent } from './components/producto/producto-edit/producto-edit.component';
 import { ProductoListComponent } from './components/producto/producto-list/producto-list.component';
 import { LoginComponent } from './components/login/login.component';
+import { AdminNewComponent } from './components/admin-new/admin-new.component';
 import {
   AgmCoreModule
 } from '@agm/core';

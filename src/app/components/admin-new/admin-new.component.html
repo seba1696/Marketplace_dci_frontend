@@ -1,0 +1,52 @@
+<!--HTML nuevo profesor-->
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header card-header-info">
+            <h4 class="card-title">Nuevo Administrador</h4>
+          </div>
+          <div class="card-body">
+            <form name="adminForm" [formGroup]="adminForm">
+              <!--Listado de campos a ingresar-->
+              <div class="row">
+                <div class="col-md-5">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Run" formControlName="run">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Pass" formControlName="pass">
+                  </mat-form-field>
+                </div>
+              </div>
+              <!--Boton para guardar-->
+              <button mat-raised-button class="btn btn-info pull-right" (click)="onSubmit()" data-toggle="modal"
+                data-target="#myModal">Guardar</button>
+              <div *ngIf="admin_status==='ok'">
+                <meta http-equiv="Refresh" content="0.1">
+              </div>
+              <div *ngIf="admin_status==='error'" class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered modal-danger">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <div class="alert alert-danger">
+                        <strong>{{msj}}</strong>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

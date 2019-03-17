@@ -14,6 +14,7 @@ import { AlumnoListComponent } from '../../components/alumno/alumno-list/alumno-
 import { AlumnoNewComponent } from '../../components/alumno/alumno-new/alumno-new.component';
 import { AlumnoEditComponent } from '../../components/alumno/alumno-edit/alumno-edit.component';
 import { LoginComponent } from '../../components/login/login.component';
+import { AdminNewComponent } from 'app/components/admin-new/admin-new.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile', component: UserProfileComponent },
@@ -32,4 +33,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'alumno-list', component: AlumnoListComponent },
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'admin-new', component: AdminNewComponent }
 ];

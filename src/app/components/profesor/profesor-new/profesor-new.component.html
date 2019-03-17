@@ -34,10 +34,43 @@
                   </mat-form-field>
                 </div>
               </div>
-              <a [routerLink]="['/profesor']">
-                <!--Boton para guardar-->
-                <button mat-raised-button class="btn btn-info pull-right" (click)="onSubmit()">Guardar</button>
-              </a>
+              <!--Boton para guardar-->
+              <button mat-raised-button class="btn btn-info pull-right" (click)="onSubmit()"
+                data-target="#myModal">Guardar</button>
+              <div *ngIf="status_profesor">
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div class="alert alert-success">
+                          <strong>{{msj}}</strong>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <a>
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="status_profesor!=false">
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div class="alert alert-danger">
+                          <strong>{{msj}}</strong>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="clearfix"></div>
             </form>
           </div>

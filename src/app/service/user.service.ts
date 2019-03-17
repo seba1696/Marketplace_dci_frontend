@@ -30,6 +30,12 @@ export class UserService {
     return this.http.post(this.base + '/usuario/login', JSON.stringify(user), options);
   }
 
+  create(token, user: any): Observable<any> {
+    let headers = new Headers({ 'Authorization': token, 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    return this.http.post(this.base + '/usuario/registro', JSON.stringify(user), options);
+  }
+
   getUsuario(token, id): Observable<any> {
     let headers = new Headers({ 'Authorization': token, 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });

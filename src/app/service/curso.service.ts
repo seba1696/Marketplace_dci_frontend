@@ -50,6 +50,12 @@ export class CursoService {
         return this.http.get(this.base + 'curso/' + id + '/mostrar-profesores', options);
     }
 
+    addProfesor(token, request: any): Observable<any> {
+        let headers = new Headers({ 'Authorization': token, 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post(this.base + 'curso/registro-profesor', JSON.stringify(request), options);
+    }
+
     getId() {
         let id = localStorage.getItem('id');
         if (id != "undefined") {

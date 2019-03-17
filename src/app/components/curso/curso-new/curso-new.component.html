@@ -10,24 +10,38 @@
           <div class="card-body">
             <form name="cursoForm" [formGroup]="cursoForm">
               <!--Listado de campos a ingresar-->
-              <div class=" row">
+              <div class="row">
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Nombre" formControlName="nombre">
+                    <input matInput placeholder="Nombre" formControlName="nombre" required>
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Codigo" formControlName="codigo">
+                    <input matInput placeholder="Codigo" formControlName="codigo" required>
                   </mat-form-field>
                 </div>
               </div>
-              <div class=row>
+              <div class="row">
+                <div class="col-md-4">
+                  <mat-form-field>
+                    <mat-select placeholder="Profesor" [formControl]="requestForm" required>
+                      <mat-option>--</mat-option>
+                      <mat-option *ngFor="let profesor of profesores" [value]="profesor" required>
+                        {{profesor.usuario.run}}
+                      </mat-option>
+                    </mat-select>
+                    <input matInput placeholder="Run Profesor" formControlName="profesor"
+                      value="Run: {{requestForm.value?.nombre}}" required>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-9"> </div>
                 <div class="col-1">
                   <a [routerLink]="['/curso']">
                     <!--Boton para cancelar-->
-                    <button mat-raised-button type="submit" class="btn btn-info btn-md pull-right">Cancelar</button>
+                    <button mat-raised-button class="btn btn-info btn-md pull-right">Cancelar</button>
                   </a>
                 </div>
                 <div class="col-2">

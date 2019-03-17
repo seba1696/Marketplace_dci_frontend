@@ -16,9 +16,12 @@ export class ProfesorNewComponent implements OnInit {
 
   public identity;
   public token;
+  public body;
+  public status;
   public user: User;
   public profesor: Profesor;
-  public status_profesor;
+  public status_profesor:boolean = true;
+  public msj;
   profesorForm: FormGroup;
 
   constructor(
@@ -28,7 +31,6 @@ export class ProfesorNewComponent implements OnInit {
     private _profesorService: ProfesorService,
     private _formBuilder: FormBuilder
   ) {
-    //this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
   }
 
@@ -39,9 +41,6 @@ export class ProfesorNewComponent implements OnInit {
       nombre: ['', [Validators.required]],
       email: ['', [Validators.required]]
     })
-    //Crear objeto profesor
-    /*this.user = new User(0, '', '', 2);
-    this.profesor = new Profesor(0, '', '', this.user.idRol);*/
   }
 
   onSubmit() {
@@ -50,21 +49,22 @@ export class ProfesorNewComponent implements OnInit {
     profesor.pass = this.profesorForm.get('pass').value;
     profesor.nombre = this.profesorForm.get('nombre').value;
     profesor.email = this.profesorForm.get('email').value;
-    console.log(profesor);
-    console.log(this.token);
     this._profesorService.create(this.token, profesor).subscribe(
       response => {
-        if (response.status == 'success') {
-          this.status_profesor = 'success';
-          this.profesor = response.profesor;
+        this.body = JSON.parse(response._body);
+        this.status = this.body.status;
+        if (this.status == 'success') {
+          this.msj = this.body.message;
+          this.status_profesor = true;
+          console.log(this.status_profesor);
         } else {
-          this.status_profesor = 'error';
+          this.msj = this.body.message;
+          this.status_profesor = false;
         }
-        console.log(response);
       },
       error => {
         console.log(<any>error);
-        this.status_profesor = 'error';
+        this.status_profesor = false;
       }
     );
   }

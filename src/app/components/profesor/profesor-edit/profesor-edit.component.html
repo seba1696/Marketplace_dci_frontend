@@ -13,7 +13,7 @@
               <div class="row">
                 <div class="col-md-5">
                   <mat-form-field>
-                    <input matInput placeholder="RUN" formControlName="run">{{usuario.run}}
+                    <input matInput placeholder="RUN" formControlName="run" value="{{usuario.run}}">
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
@@ -25,12 +25,12 @@
               <div class="row">
                 <div class="col-md-6">
                   <mat-form-field>
-                    <input matInput placeholder="Nombre" formControlName="nombre">{{profesor.nombre}}
+                    <input matInput placeholder="Nombre" formControlName="nombre" value="{{profesor.nombre}}">
                   </mat-form-field>
                 </div>
                 <div class="col-md-4">
                   <mat-form-field>
-                    <input matInput placeholder="Email" formControlName="email">{{profesor.email}}
+                    <input matInput placeholder="Email" formControlName="email" value="{{profesor.email}}">
                   </mat-form-field>
                 </div>
               </div>
@@ -39,13 +39,15 @@
                 <div class="col-1">
                   <a [routerLink]="['/profesor']">
                     <!--Boton para cancelar-->
-                    <button mat-raised-button class="btn btn-info btn-sm pull-right" (click)="destroyId()">Cancelar</button>
+                    <button mat-raised-button class="btn btn-info btn-sm pull-right"
+                      (click)="destroyId()">Cancelar</button>
                   </a>
                 </div>
                 <div class="col-2">
                   <a [routerLink]="['/profesor']">
                     <!--Boton para guardar-->
-                    <button mat-raised-button class="btn btn-info btn-sm pull-right" (click)="onSubmit()">Guardar</button>
+                    <button mat-raised-button class="btn btn-info btn-sm pull-right"
+                      (click)="onSubmit()">Guardar</button>
                   </a>
                 </div>
               </div>

@@ -25,11 +25,9 @@ export class CursoListComponent implements OnInit {
   ngOnInit() {
     this._cursoService.getCursos(this.token).subscribe(
       response => {
-        console.log(response);
         if (response.statusText == 'OK') {
           this.body = JSON.parse(response._body);
           this.cursos = this.body.cursos;
-          console.log(this.cursos);
         }
       },
       error => {
